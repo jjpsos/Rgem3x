@@ -2,7 +2,7 @@
 //  CoreDataManager.swift
 //  Rgem3xApp
 //
-//  Modified by James Sosontovich on 2/23/21.
+//  Modified by James Sosontovich on 7/29/21.
 //
 
 import Foundation
