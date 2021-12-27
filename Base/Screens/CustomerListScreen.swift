@@ -17,6 +17,89 @@ enum Sheets: Identifiable {
     case showFilters
 }
 
+//*** Security
+
+let lightGreyColor = Color(red: 239.0/255.0,
+                           green: 243.0/255.0,
+                           blue: 244.0/255.0,
+                           opacity: 1.0)
+
+
+let storedPassword = "Demo2022"
+
+struct ContentView : View {
+    
+    @State var password: String = ""
+    @State var authenticationDidFail: Bool = false
+    @State var authenticationDidSucceed: Bool = false
+    
+    var body: some View {
+        //NavigationView{
+            VStack {
+                if !authenticationDidSucceed {
+                
+                    HStack {
+                                       
+                        PasswordSecureField(password: $password)
+                        if authenticationDidFail {
+                            Text("?")
+                                .offset(y: -10)
+                                .foregroundColor(.red)
+                        }
+                        
+                        Button(action: {
+                            if  self.password == storedPassword {
+                                self.authenticationDidSucceed = true
+                                self.authenticationDidFail = false
+                            } else {
+                                self.authenticationDidFail = true
+                            }
+                        }) {
+                            LoginButtonContent()
+                           }
+                    }
+                    .padding()
+                }
+             
+                if authenticationDidSucceed {
+                    CustomerListScreen()
+                }
+            }
+
+        //}
+    }
+}
+
+
+struct LoginButtonContent : View {
+    var body: some View {
+        return Text("Go")
+            .font(.headline)
+            .foregroundColor(.green)
+            .padding()
+            .frame(width: 22, height: 22)
+            .background(Color.green)
+            .cornerRadius(15.0)
+    }
+}
+
+struct PasswordSecureField : View {
+    
+    @Binding var password: String
+    
+    var body: some View {
+        return SecureField("Security Key", text: $password)
+            .padding()
+            .background(lightGreyColor)
+            .cornerRadius(5.0)
+            .padding(.bottom, 2)
+    }
+}
+
+
+
+//***Secured:
+
 struct CustomerListScreen: View {
     
     @StateObject private var customerListVM = CustomerListViewModel()
@@ -134,6 +217,9 @@ struct CustomerListScreen_Previews: PreviewProvider {
 
 struct CustomerCell: View {
     
+    //var colors = ["Red", "Green", "Blue", "Tartan"]
+    //@State private var selectedColor = "Red"
+    
     let customer: CustomerViewModel
     
     var body: some View {
@@ -141,7 +227,7 @@ struct CustomerCell: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(customer.title)
                     .fontWeight(.bold)
-                    .font(.system(size: 14))
+                    .font(.system(size: 16))
                 Text(customer.director)
                     .font(.callout)
                     .opacity(0.5)
@@ -149,6 +235,15 @@ struct CustomerCell: View {
                     .font(.callout)
                     .opacity(0.8)
                 Spacer()
+                /*
+                Picker("Please choose a color", selection: $selectedColor) {
+                                ForEach(colors, id: \.self) {
+                                    Text($0)
+                                }
+                            }
+                            .pickerStyle(.menu)
+                            Text("You selected: \(selectedColor)")
+                */
                 
             }
             Spacer()

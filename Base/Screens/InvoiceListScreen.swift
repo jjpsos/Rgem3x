@@ -9,6 +9,9 @@ import SwiftUI
 
 struct InvoiceListScreen: View {
     
+    var colors = ["Await Pay", "Partial Pay", "Paid", "Over Due"]
+    @State private var selectedColor = "Paid"
+    
     let customer: CustomerViewModel
     @State private var isPresented: Bool = false
     @StateObject private var invoiceListVM = InvoiceListViewModel()
@@ -21,11 +24,46 @@ struct InvoiceListScreen: View {
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(invoice.title)
-                                Text(invoice.text)
-                                    .font(.caption)
-                            }
+                                Text(invoice.publishedDate!.asFormattedString() + "         ")
+                                    .font(.system(size: 10))
+                                /*
+                                HStack{
+                                    Text("\(selectedColor)")
+                                        .font(.caption)
+                                    
+                                    Picker("*", selection: $selectedColor) {
+                                                    ForEach(colors, id: \.self) {
+                                                        Text($0)
+                                                    }
+                                                }
+                                                .pickerStyle(.menu)
+                                                //Text("\(selectedColor)")  
+                                    
+                                } */
+                                
+                                
+                            }.font(.caption)
                             Spacer()
-                            Text(invoice.publishedDate!.asFormattedString())
+                            //Text(invoice.publishedDate!.asFormattedString())
+                            HStack{
+                                //Spacer()
+                                //Text(invoice.text)
+                                Text(invoice.myStatus)
+                                //Text("\(selectedColor)")
+                                    .padding(5)
+                                Spacer()
+                                Text(invoice.text)
+                                    
+                                
+                                Picker("@", selection: $selectedColor) {
+                                                ForEach(colors, id: \.self) {
+                                                    Text($0)
+                                                }
+                                            }
+                                            .pickerStyle(.menu)
+                                            //Text("\(selectedColor)")
+                                            
+                            }.font(.caption)
                         }
                     }
                 }

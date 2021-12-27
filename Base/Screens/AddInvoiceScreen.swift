@@ -18,6 +18,7 @@ struct AddInvoiceScreen: View {
         Form {
             TextField("Enter title", text: $addInvoiceVM.title)
             TextEditor(text: $addInvoiceVM.text)
+            TextEditor(text: $addInvoiceVM.myStatus)
             
             HStack {
                 Spacer()

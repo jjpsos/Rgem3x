@@ -16,7 +16,9 @@ struct Rgem3xApp: App {
     
     var body: some Scene {
         WindowGroup {
-            CustomerListScreen()
+            //CustomerListScreen()
+            //***Security
+            ContentView()
         }
     }
 }

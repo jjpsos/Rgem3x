@@ -10,7 +10,8 @@ import Foundation
 class AddInvoiceViewModel: ObservableObject {
     
     var title: String = ""
-    var text: String = ""
+    var text: String = "$"
+    var myStatus: String = "Paid"
     
     func addInvoiceForCustomer(vm: CustomerViewModel) {
         
@@ -19,6 +20,7 @@ class AddInvoiceViewModel: ObservableObject {
         let invoice = Invoice(context: Customer.viewContext)
         invoice.title = title
         invoice.text = text
+        invoice.myStatus = myStatus
         invoice.customer = customer
         
         // save the invoice

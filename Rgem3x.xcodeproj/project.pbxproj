@@ -40,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		386EC28526B33C610016EA5F /* Rgem3x.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rgem3x.entitlements; sourceTree = "<group>"; };
 		8D0926BD25E59B3B00502FF8 /* Rgem3x.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rgem3x.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0926C025E59B3B00502FF8 /* Rgem3xApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rgem3xApp.swift; sourceTree = "<group>"; };
 		8D0926C425E59B3C00502FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		8D0926B425E59B3B00502FF8 = {
 			isa = PBXGroup;
 			children = (
+				386EC28526B33C610016EA5F /* Rgem3x.entitlements */,
 				8D0926BF25E59B3B00502FF8 /* Base */,
 				8D0926BE25E59B3B00502FF8 /* Products */,
 			);
@@ -419,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Rgem3x.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Base/Preview Content\"";
 				DEVELOPMENT_TEAM = 3N425AX44F;
@@ -431,6 +434,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.reesol.Rgem3x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Rgem3x.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Base/Preview Content\"";
 				DEVELOPMENT_TEAM = 3N425AX44F;
@@ -453,6 +459,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.reesol.Rgem3x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

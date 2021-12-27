@@ -35,6 +35,10 @@ struct InvoiceViewModel {
         return invoice.text ?? ""
     }
     
+    var myStatus: String {
+        return invoice.myStatus ?? ""
+    }
+    
     var publishedDate: Date? {
         return invoice.publishedAt
     }
