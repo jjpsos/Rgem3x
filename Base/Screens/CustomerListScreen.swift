@@ -17,7 +17,7 @@ enum Sheets: Identifiable {
     case showFilters
 }
 
-//*** Security
+//*** Security ***
 
 let lightGreyColor = Color(red: 239.0/255.0,
                            green: 243.0/255.0,
