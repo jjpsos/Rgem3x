@@ -17,7 +17,10 @@ class CoreDataManager {
     
     private init() {
         
-        persistentContainer = NSPersistentContainer(name: "Rgem3xModel")
+        persistentContainer = NSPersistentCloudKitContainer(name: "Rgem3xModel")
+        persistentContainer.persistentStoreDescriptions.first!.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        persistentContainer.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
         persistentContainer.loadPersistentStores { (description, error) in
             if let error = error {
                 fatalError("Failed to initialize Core Data \(error)")

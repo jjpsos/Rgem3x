@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38CAC977277A5CB700660A7F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CAC976277A5CB700660A7F /* CloudKit.framework */; };
 		8D0926C125E59B3B00502FF8 /* Rgem3xApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0926C025E59B3B00502FF8 /* Rgem3xApp.swift */; };
 		8D0926C525E59B3C00502FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0926C425E59B3C00502FF8 /* Assets.xcassets */; };
 		8D0926C825E59B3C00502FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0926C725E59B3C00502FF8 /* Preview Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		386EC28526B33C610016EA5F /* Rgem3x.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rgem3x.entitlements; sourceTree = "<group>"; };
+		38CAC976277A5CB700660A7F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		8D0926BD25E59B3B00502FF8 /* Rgem3x.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rgem3x.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0926C025E59B3B00502FF8 /* Rgem3xApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rgem3xApp.swift; sourceTree = "<group>"; };
 		8D0926C425E59B3C00502FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,18 +82,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CAC977277A5CB700660A7F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38CAC975277A5CB700660A7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38CAC976277A5CB700660A7F /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8D0926B425E59B3B00502FF8 = {
 			isa = PBXGroup;
 			children = (
 				386EC28526B33C610016EA5F /* Rgem3x.entitlements */,
 				8D0926BF25E59B3B00502FF8 /* Base */,
 				8D0926BE25E59B3B00502FF8 /* Products */,
+				38CAC975277A5CB700660A7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
