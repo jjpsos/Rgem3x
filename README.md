@@ -1,2 +1,4 @@
 # Rgem3x
-ReadMe
+
+Sample Swift application using the CloudKit framework.
+MVC framework implementation.
